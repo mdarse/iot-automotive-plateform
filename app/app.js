@@ -5,7 +5,9 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
+  , settings = require('./routes/settings')
+  , statistics = require('./routes/statistics')
+  , map = require('./routes/map')
   , http = require('http')
   , path = require('path');
 
@@ -21,7 +23,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // development only
 if ('development' == app.get('env')) {
@@ -29,7 +31,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/settings', settings.index);
+app.get('/statistics', statistics.index);
+app.get('/map', map.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
