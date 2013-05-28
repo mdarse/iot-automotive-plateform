@@ -34,3 +34,12 @@ app.get('/users', user.list);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
+// Car plateform
+var server = require('../lib/server')
+  , net = require('net');
+
+net.createServer(server).listen(app.get('ota port'), function() {
+  console.log('OTA server listening on port ' + app.get('ota port'));
+});
