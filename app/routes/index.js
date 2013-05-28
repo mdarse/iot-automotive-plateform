@@ -12,7 +12,7 @@ exports.index = function(req, res, next) {
     if (err) return next(err);
 
     res.render('index', {
-      title: 'Home',
+      title: 'Remoteo',
       batteryStatus: status
     });
   });

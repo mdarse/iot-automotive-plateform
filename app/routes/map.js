@@ -5,6 +5,6 @@
 
 exports.index = function(req, res) {
   res.render('map', {
-      title: 'Page Carte des bornes'
+      title: 'Carte des bornes'
     });
 };

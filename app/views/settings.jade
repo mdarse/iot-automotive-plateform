@@ -1,4 +1,41 @@
 extends layout
 
 block content
-  h1= title
+  div
+
+    header
+      h1= title
+
+    div.content
+
+      div.option.option1
+        h3 Alertes
+        p M'alerter lorsque le niveau de la batterie atteint 100% :
+        div.alert-mob
+          p Application mobile
+            label On
+              input(type='radio', name='mobile', value='on')
+            label Off
+              input(type='radio', name='mobile', value='off')
+        div.alert-sms
+          p Sms
+            label On
+              input(type='radio', name='sms', value='on')
+            label Off
+              input(type='radio', name='sms', value='off')
+        div.phone
+          label Numéro de téléphone
+            input(type='tel', name='phone', value='0606060606', disabled)
+          button(type='button') Modifier
+
+      div.option.option2
+        h3 Température du préchauffage
+        input(type='range', name='prechauff', max='30', min='0', value='20', step='1')
+
+    footer
+      p 
+        a(href='/') Retour
+      p 
+        a(href='#') A propos
+      p
+        a(href='#') Haut de page

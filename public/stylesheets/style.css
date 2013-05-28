@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+input[type="range"] { margin-left: 1em; position: relative; }
+input[type="range"]:after,
+input[type="range"]:before { color: #aaa; position: absolute; top: 1em; }
+input[type="range"]:before { content: attr(min); left: 0; }
+input[type="range"]:after { content: attr(max); right: 0; }
