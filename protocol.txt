@@ -1,0 +1,47 @@
+Taille fixe
+    - Beaucoup plus simple à implémenter bas niveau
+    - Moins efficace niveau réseau
+    - Plus facilement robuste, car simple
+    - Obligé de faire de la segmentation pour les logs
+
+    + segmentation
+        - Plus complexe à gérer au niveau des couches basses
+        - Moins inefficace que du padding sur des grosses tailles fixes
+        - Plus future-proof
+
+Taille variable
+    - Moyennement difficile à spécifier + implémenter
+    - Plus dur de faire des choses robustes, pour rattraper le fil si on est perdu
+    - Pas besoin de segmentation
+
+
+
+
+
+Frame structure
+
+    0                   1                   2                   3
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |     Start     | Message Type  |          Reserved             |
+   |   delimiter   |               |                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                             data                              |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                                  ...
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                             data                              |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+    Frame size 32 bytes
+
+
+PubSub message structure (subscribe/unsubscribe)
+
+    0                   1                   2                   3
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |        Topic Identifier       |            data               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                             data                              |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
