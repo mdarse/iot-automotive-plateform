@@ -1,54 +1,54 @@
 extends layout
 
 block content
-  div
+  div.site.home
 
-  header
-    h1= title
+    header
+      h1= title
 
-  div.content
+    div.content
 
-    div.option.option1
-      div.batterie
-        img(alt='battery')
-        p Battery level: #{batteryStatus.level}, charging: #{batteryStatus.isCharging}
+      div.option.option1
+        div.batterie
+          img(alt='battery')
+          p Battery level: #{batteryStatus.level}, charging: #{batteryStatus.isCharging}
 
-      div.therm
-        p Température intérieure
-        p Température extérieure</p>
+        div.therm
+          p Température intérieure
+          p Température extérieure</p>
 
-    div.option.option2
-      h3 Portes
-      button(type='button') Verrouiller
-      button(type='button') Déverrouiller
+      div.option.option2
+        h3 Portes
+        button(type='button') Verrouiller
+        button(type='button') Déverrouiller
 
-    div.option.option3
-      h3 Vitres
-      button(type='button') Ouvrir
-      button(type='button') Fermer
-      button(type='button') Entrouvrir
+      div.option.option3
+        h3 Vitres
+        button(type='button') Ouvrir
+        button(type='button') Fermer
+        button(type='button') Entrouvrir
 
-    div.option.option4
-      h3 Chauffage
-      label Oui
-        input(type='radio', name='chauffage', value='oui')
-      label Non
-        input(type='radio', name='chauffage', value='non')
+      div.option.option4
+        h3 Chauffage
+        label Oui
+          input(type='radio', name='chauffage', value='oui')
+        label Non
+          input(type='radio', name='chauffage', value='non')
 
-    div.option.option5
-      button(type='button') Where is my car ?
+      div.option.option5
+        button(type='button') Where is my car ?
 
-    div.menu
-      ul
-        li
-          a(href='/map') Carte des bornes
-        li
-          a(href='/statistics') Statistiques
-        li
-          a(href='/settings') Réglages
+      div.menu
+        ul
+          li
+            a(href='/map') Carte des bornes
+          li
+            a(href='/statistics') Statistiques
+          li
+            a(href='/settings') Réglages
 
-  footer
-    p 
-      a(href='#') A propos
-    p
-      a(href='#') Haut de page
+    footer
+      p 
+        a(href='#') A propos
+      p
+        a(href='#') Haut de page
