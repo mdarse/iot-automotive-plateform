@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+"use strict";
+/* jshint undef: true, unused: false, globalstrict: true, laxcomma: true */
+/* global require, module, Buffer, console, process */
+
+var readline = require('readline')
+  , Client = require('../lib/client/client')
+  , log = require('../lib/client/log')
+  ;
+
+
+// connect to the OTA server
+var host = process.argv[2] || 'localhost';
+var port = process.argv[3] || 4000;
+var client = new Client(host, port);
+client.connect();
+client.on('connect', function() {
+  log('connected');
+});
+client.on('frame', function(data) {
+  log('received frame', data, data.toString());
+});
+client.on('end', function() {
+  log('disconnected');
+});
+
+
+// creates the prompt interface
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.setPrompt('OHAI> ');
+rl.prompt();
+
+rl.on('line', function(line) {
+  switch(line.trim()) {
+    case 'hello':
+      console.log('world!');
+      break;
+    case 'auth':
+      console.log('sending auth request');
+      client.authenticate('010203040506070809AAAAAAAAAAAAFF');
+      break;
+    case 'ready':
+      console.log('sending ready notification');
+      client.ready();
+      break;
+    default:
+      console.log('Say what? I might have heard `' + line.trim() + '`');
+      console.log('Available messages: auth, ready');
+      break;
+  }
+  rl.prompt();
+}).on('close', function() {
+  console.log('Have a great day!');
+  process.exit(0);
+});
