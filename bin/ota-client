@@ -23,6 +23,7 @@ client.on('frame', function(data) {
 });
 client.on('end', function() {
   log('disconnected');
+  process.exit(0);
 });
 
 
