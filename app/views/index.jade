@@ -1,57 +1,51 @@
 extends layout
 
+block retour
+
 block content
-  div.site.home
+  .option.option1
+    .batterie
+      img(src='../img/battery.png', alt='Niveau de batterie')
+      p Battery level: #{batteryStatus.level}, charging: #{batteryStatus.isCharging}
 
-    header
-      h1= title
+    .therm
+      p
+        span.temp #{temperature.internal}°C 
+        span Intérieur
+      p
+        span.temp #{temperature.external}°C 
+        span Extérieur
 
-    div.content
+  .option.option2
+    h3 Portes
+    button.close(type='button', id='door-close') Verrouillé
+    button.open(type='button', id='door-open') Déverrouiller
 
-      div.option.option1
-        div.batterie
-          img(src='../img/battery.png', alt='Niveau de batterie')
-          p Battery level: #{batteryStatus.level}, charging: #{batteryStatus.isCharging}
+  .option.option3
+    h3 Vitres
+    button.ouvert(type='button', id='pane-open') Ouvrir
+    button.ferme.selection(type='button', id='pane-close') Fermé
+    button.entrouvert(type='button', id='pane-half') Entrouvrir
 
-        div.therm
-          p
-            span.temp #{temperature.internal}
-            span Intérieur
-          p
-            span.temp #{temperature.external}
-            span Extérieur
+  .option.option4
+    h3 Chauffage
+    button.hot.selection(type='button', id='heat-on') On
+    button.cold(type='button', id='heat-off') Off
 
-      div.option.option2
-        h3 Portes
-        button.close.selection(type='button', id='door-close') Verrouillé
-        button.open(type='button', id='door-open') Déverrouiller
+  .option.option5
+    button(type='button', id='where') Where is my car ?
 
-      div.option.option3
-        h3 Vitres
-        button.ouvert(type='button', id='pane-open') Ouvrir
-        button.ferme.selection(type='button', id='pane-close') Fermé
-        button.entrouvert(type='button', id='pane-half') Entrouvrir
+  .menu
+    ul
+      a(href='/map')
+        li.item1 Carte des bornes
+      a(href='/statistics')
+        li.item2 Statistiques
+      a(href='/settings')
+        li.item3 Réglages
 
-      div.option.option4
-        h3 Chauffage
-        button.hot.selection(type='button', id='heat-on') On
-        button.cold(type='button', id='heat-off') Off
-
-      div.option.option5
-        button(type='button', id='where') Where is my car ?
-
-      div.menu
-        ul
-          a(href='/map')
-            li.item1 Carte des bornes
-          a(href='/statistics')
-            li.item2 Statistiques
-          a(href='/settings')
-            li.item3 Réglages
-
-    footer
-      p.about 
-        span#about A propos
-      p.top
-        a(href='#') Haut de page
-      div.clear
+block footer
+  footer
+    a.about(disabled) A propos
+    a.top(href='#') Haut de page
+    .clear

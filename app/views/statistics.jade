@@ -1,37 +1,18 @@
 extends layout
 
 block content
-  div.site.stats
+  .option.option1
+    p Moyenne de km parcourus entre chaque charge
+    div.stat 100 km
 
-    header
-      h1= title
-
-    div.content
-
-      div.option.option1
-        h3 Moyenne de km parcourus entre chaque charge
-        p.stat 100 km
-
-      div.option.option2
-        h3 Nombre total de km parcourus
-        p.stat 2553 km
+  .option.option2
+    p Nombre total de km parcourus
+    div.stat 2553 km
       
-      div.option.option3
-        h3 Nombre de charges complètes de la batterie
-        p.stat 22 charges
+  .option.option3
+    p Nombre de charges complètes de la batterie
+    div.stat 22 charges
 
-      div.option.option4
-        h3 Energie totale dépensée
-        p.stat 1800 Watts
-
-    footer
-      p 
-        a(href='/') Retour
-      p.about 
-        span#about A propos
-      p.top
-        a(href='#') Haut de page
-      div.clear
-
-  p.retour
-    a(href='/') Retour
+  .option.option4
+    p Energie totale dépensée
+    div.stat 1800 Watts

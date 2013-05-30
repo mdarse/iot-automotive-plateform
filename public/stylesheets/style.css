@@ -7,10 +7,9 @@ div,
 li a { box-sizing: border-box; }
 
 h3 { margin: 0 0 10px; text-align: left; }
-div.clear { clear: both; }
+.clear { clear: both; }
 
-div.site {
-	background-color: #fff;
+.container {
 	color: #666;
 	margin: 0 auto;
 	padding: 0;
@@ -22,7 +21,7 @@ header {
 	padding: 10px;
 	text-align: center;
 }
-header h1 {
+h1 {
 	font-family: "Bree serif", serif;
 	font-size: 2.2em;
 	font-weight: normal;
@@ -31,31 +30,33 @@ header h1 {
 	   -moz-text-shadow: 1px 1px 1px #000;
 			text-shadow: 1px 1px 1px #000;
 }
-div.content { height: auto; min-height: 333px; padding: 10px; }
+.content {
+	background-color: #fff;
+	height: auto;
+	min-height: 333px;
+	padding: 10px;
+}
 footer {
 	background-color: #111;
 	color: #fff;
 	padding: 10px;
 	text-align: center;
 }
-footer .about { float: left; margin-top: -30px; }
-footer .top { float: right; margin-top: -30px; }
-.home footer .about,
-.home footer .top { margin-top: 10px; }
+footer .about { float: left; }
+footer .top { float: right; }
 
 
 /*Home*/
-div.option { border-top: 2px solid #ccc; clear: both; padding: 10px 0; }
-div.option button { color: #999; font-size: 1.2em; }
+.option { border-top: 2px solid #ccc; clear: both; padding: 10px 0; }
+.option button { background-color: #ddd; color: #999; font-size: 1.2em; }
+.option .selection { background-color: #333; }
 
-div.option1 { border: none; }
-.home div.option1 > div { float: left; }
-div.batterie { text-align: center; width: 60%; }
-div.therm { font-size: 0.8em; width: 40%; }
-div.therm .temp { font-size: 2em; }
+.option1 { border: none; }
+.batterie { float: left; text-align: center; width: 60%; }
+.therm { float: left; font-size: 0.8em; width: 40%; }
+.therm .temp { font-size: 2em; }
 
-div.option2 button {
-	background-color: #ccc;
+.option2 button {
 	background-position: center 10px;
 	background-repeat: no-repeat;
 	border: none;
@@ -64,18 +65,11 @@ div.option2 button {
 	text-align: center;
 	width: 50%;
 }
-div.option2 button:hover { background-color: #666; }
-div.option2 button.selection {
-	background-color: #333;
-/*	-webkit-box-shadow: 5px 5px 5px #000;
-	   -moz-box-shadow: 5px 5px 5px #000;
-			box-shadow: 5px 5px 5px #000;*/
-}
-div.option2 button.close { background-image: url("../img/closed.png"); }
-div.option2 button.open { background-image: url("../img/open.png"); }
+.option2 button:hover { background-color: #666; }
+.option2 .close { background-image: url("../img/closed.png"); }
+.option2 .open { background-image: url("../img/open.png"); }
 
-div.option3 button {
-	background-color: #ccc;
+.option3 button {
 	background-position: center 10px;
 	background-repeat: no-repeat;
 	border: none;
@@ -83,15 +77,12 @@ div.option3 button {
 	padding-top: 70px;
 	width: 33.33%;
 }
-div.option3 button:hover { background-color: #666; }
-div.option3 button.selection { background-color: #333; }
-div.option3 button.ouvert { background-image: url("../img/pane-open.png"); }
-div.option3 button.ferme { background-image: url("../img/pane-close.png"); }
-div.option3 button.entrouvert { background-image: url("../img/pane-half.png"); }
+.option3 button:hover { background-color: #666; }
+.option3 .ouvert { background-image: url("../img/pane-open.png"); }
+.option3 .ferme { background-image: url("../img/pane-close.png"); }
+.option3 .entrouvert { background-image: url("../img/pane-half.png"); }
 
-div.option4 { text-align: center; }
-div.option4 button {
-	background-color: #ccc;
+.option4 button {
 	background-position: center 0;
 	background-repeat: no-repeat;
 	border: none;
@@ -100,26 +91,25 @@ div.option4 button {
 	text-align: center;
 	width: 50%;
 }
-div.option4 button:hover { background-color: #666; }
-div.option4 button.selection { background-color: #333; }
-div.option4 button.hot { background-image: url("../img/hot.png"); }
-div.option4 button.cold { background-image: url("../img/cold.png"); }
+.option4 button:hover { background-color: #666; }
+.option4 .hot { background-image: url("../img/hot.png"); }
+.option4 .cold { background-image: url("../img/cold.png"); }
 
-div.option5 button { 
+.option5 button { 
 	background: #333 url("../img/where.png") 10px center no-repeat;
 	border: none;
 	padding: 15px 0;
 	width: 100%;
 }
-div.option5 button:hover { background-color: #222; }
+.option5 button:hover { background-color: #222; }
 
-div.menu { border-top: 2px solid #ccc; }
-div.menu ul {
+.menu { border-top: 2px solid #ccc; }
+.menu ul {
 	list-style: none;
 	margin: 10px 0;
 	padding: 0;
 }
-div.menu ul li {
+.menu ul li {
 	background-color: #333;
 	font-size: 1.2em;
 	margin-bottom: 5px;
@@ -127,21 +117,20 @@ div.menu ul li {
 	text-align: center;
 	width: 86%;
 }
-div.menu ul li:hover { background-color: #222; }
-div.menu li.item1 { 
+.menu ul li:hover { background-color: #222; }
+.menu .item1 { 
 	background: #333 url("../img/map.png") 10px center no-repeat;
 }
-div.menu li.item2 { 
+.menu .item2 { 
 	background: #333 url("../img/stats.png") 10px center no-repeat;
 }
-div.menu li.item3 { 
+.menu .item3 { 
 	background: #333 url("../img/settings.png") 10px center no-repeat;
 }
 
+/*Map*/
 
-iframe { border: none; }
-
-
+/*Statistiques*/
 .stat {
 	font-family: "Bree serif", serif;
 	font-size: 2.2em;
@@ -149,7 +138,7 @@ iframe { border: none; }
 	text-align: center;
 }
 
-
+/*Réglages*/
 #phone-modif { background-color: transparent; border: none; }
 input[type="range"] { margin-left: 1em; position: relative; }
 input[type="range"]:after,
@@ -159,7 +148,7 @@ input[type="range"]:after { content: attr(max); right: 0; }
 
 
 
-p.retour { display: none; }
+.retour { display: none; }
 
 
 
@@ -181,7 +170,7 @@ p.retour { display: none; }
 		   -moz-background-size: cover;
 				background-size: cover;
 	}
-	div.site {
+	.container {
 		-webkit-border-radius: 5px;
 		   -moz-border-radius: 5px;
 				border-radius: 5px;
@@ -199,17 +188,12 @@ p.retour { display: none; }
 		   -moz-border-radius: 0 0 5px 5px;
 				border-radius: 0 0 5px 5px;
 	}
-	div.content { padding: 20px; }
+	.content { padding: 20px; }
 
-	div.menu ul li { width: 93%; }
+	.menu ul li { width: 93%; }
 
-
-
-	p.retour {
+	.retour {
 		display: block;
-		left: 28%;
-		margin: 0;
-		position: absolute;
-		top: 20px;
+		margin: -15px 0 15px;
 	}
 }

@@ -1,21 +1,12 @@
 extends layout
 
 block content
-  div.site.map
+  iframe(width='100%',
+    height='450',
+    frameborder='0',
+    scrolling='no',
+    marginheight='0',
+    marginwidth='0',
+    src='https://maps.google.fr/?ie=UTF8&amp;ll=49.075089,2.101856&amp;spn=0.643214,1.355438&amp;t=m&amp;z=10&amp;output=embed')
 
-    header
-      h1= title
-
-    iframe(src='http://maps.google.fr/', height='450', width='100%')
-
-    footer
-      p 
-        a(href='/') Retour
-      p.about 
-        span#about A propos
-      p.top
-        a(href='#') Haut de page
-      div.clear
-
-  p.retour
-    a(href='/') Retour
+  
