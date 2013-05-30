@@ -9,13 +9,22 @@ if (!!window.EventSource) {
     console.log(e.data);
   }, false);
 
+  // Battery status
   source.addEventListener('batteryStatusChange', function(e) {
     var data = JSON.parse(e.data);
     console.log(data);
     var level = data.level;
     var isCharging = data.isCharging;
-    console.log(level);
-    console.log(isCharging);
+
+    if(isCharging) {
+      $('#batteryCharging').html('batterie en charge');
+    } 
+    else {
+      $('#batteryCharging').html('batterie non chargée');
+    }
+
+    $('#batteryLevel span').html(level);
+
   }, false);
 
   source.addEventListener('error', function(e) {

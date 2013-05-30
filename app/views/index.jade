@@ -6,7 +6,9 @@ block content
   .option.option1
     .batterie
       img(src='../img/battery.png', alt='Niveau de batterie')
-      p Battery level: #{batteryStatus.level}, charging: #{batteryStatus.isCharging}
+      p#batteryCharging ...
+      p#batteryLevel Niveau de la batterie: 
+        span #{batteryStatus.level}
 
     .therm
       p
