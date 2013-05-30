@@ -8,6 +8,7 @@ var express = require('express')
   , settings = require('./routes/settings')
   , statistics = require('./routes/statistics')
   , map = require('./routes/map')
+  , plateform = require('./routes/plateform')
   , http = require('http')
   , path = require('path');
 
@@ -34,6 +35,7 @@ app.get('/', routes.index);
 app.get('/settings', settings.index);
 app.get('/statistics', statistics.index);
 app.get('/map', map.index);
+app.get('/plateform', plateform.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
@@ -44,6 +46,6 @@ http.createServer(app).listen(app.get('port'), function(){
 var server = require('../lib/server')
   , net = require('net');
 
-net.createServer(server).listen(app.get('ota port'), function() {
+net.createServer(server.connectionListener).listen(app.get('ota port'), function() {
   console.log('OTA server listening on port ' + app.get('ota port'));
 });

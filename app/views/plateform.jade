@@ -1,0 +1,28 @@
+doctype 5
+html
+  head
+    title Plateform Status
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+  body
+    h1 Plateform Status
+    table.connections
+        tr
+            th Address
+            th Port
+            th Bytes reveived
+            th Bytes sent
+            th Handshaked
+            th Authenticated
+            th Identifier
+            th Ready
+        each connection in connections
+            tr
+                td.address= connection.socket.remoteAddress
+                td.port= connection.socket.remotePort
+                td.received= connection.socket.bytesRead
+                td.sent= connection.socket.bytesWritten
+                td.handshaked= connection.handshaked
+                td.authenticated= connection.authenticated
+                td.identifier= connection.identifier
+                td.ready= connection.ready
+
