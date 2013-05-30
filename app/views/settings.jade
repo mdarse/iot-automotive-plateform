@@ -13,20 +13,17 @@ block content
         p M'alerter lorsque le niveau de la batterie atteint 100% :
         div.alert-mob
           p Application mobile
-            label On
-              input(type='radio', name='mobile', value='on')
-            label Off
-              input(type='radio', name='mobile', value='off')
+            button.sms-y.selection(type='button', id='heat-on') On
+            button.sms-n(type='button', id='heat-off') Off
         div.alert-sms
           p Sms
-            label On
-              input(type='radio', name='sms', value='on')
-            label Off
-              input(type='radio', name='sms', value='off')
+            button.sms-y.selection(type='button', id='heat-on') On
+            button.sms-n(type='button', id='heat-off') Off
         div.phone
           label Numéro de téléphone
             input(type='tel', name='phone', value='0606060606', disabled)
-          button(type='button') Modifier
+          button(type='button', id='phone-modif')
+            img(src='/img/.png', alt='Modifier')
 
       div.option.option2
         h3 Température du préchauffage
@@ -35,7 +32,11 @@ block content
     footer
       p 
         a(href='/') Retour
-      p 
-        a(href='#') A propos
-      p
+      p.about 
+        span#about A propos
+      p.top
         a(href='#') Haut de page
+      div.clear
+
+  p.retour
+    a(href='/') Retour

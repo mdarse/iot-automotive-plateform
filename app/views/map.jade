@@ -6,12 +6,16 @@ block content
     header
       h1= title
 
-    div.content
+    iframe(src='http://maps.google.fr/', height='450', width='100%')
 
     footer
       p 
         a(href='/') Retour
-      p 
-        a(href='#') A propos
-      p
+      p.about 
+        span#about A propos
+      p.top
         a(href='#') Haut de page
+      div.clear
+
+  p.retour
+    a(href='/') Retour

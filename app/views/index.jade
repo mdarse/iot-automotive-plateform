@@ -10,45 +10,48 @@ block content
 
       div.option.option1
         div.batterie
-          img(alt='battery')
+          img(src='../img/battery.png', alt='Niveau de batterie')
           p Battery level: #{batteryStatus.level}, charging: #{batteryStatus.isCharging}
 
         div.therm
-          p Température intérieure
-          p Température extérieure</p>
+          p
+            span.temp #{temperature.internal}
+            span Intérieur
+          p
+            span.temp #{temperature.external}
+            span Extérieur
 
       div.option.option2
         h3 Portes
-        button(type='button') Verrouiller
-        button(type='button') Déverrouiller
+        button.close.selection(type='button', id='door-close') Verrouillé
+        button.open(type='button', id='door-open') Déverrouiller
 
       div.option.option3
         h3 Vitres
-        button(type='button') Ouvrir
-        button(type='button') Fermer
-        button(type='button') Entrouvrir
+        button.ouvert(type='button', id='pane-open') Ouvrir
+        button.ferme.selection(type='button', id='pane-close') Fermé
+        button.entrouvert(type='button', id='pane-half') Entrouvrir
 
       div.option.option4
         h3 Chauffage
-        label Oui
-          input(type='radio', name='chauffage', value='oui')
-        label Non
-          input(type='radio', name='chauffage', value='non')
+        button.hot.selection(type='button', id='heat-on') On
+        button.cold(type='button', id='heat-off') Off
 
       div.option.option5
-        button(type='button') Where is my car ?
+        button(type='button', id='where') Where is my car ?
 
       div.menu
         ul
-          li
-            a(href='/map') Carte des bornes
-          li
-            a(href='/statistics') Statistiques
-          li
-            a(href='/settings') Réglages
+          a(href='/map')
+            li.item1 Carte des bornes
+          a(href='/statistics')
+            li.item2 Statistiques
+          a(href='/settings')
+            li.item3 Réglages
 
     footer
-      p 
-        a(href='#') A propos
-      p
+      p.about 
+        span#about A propos
+      p.top
         a(href='#') Haut de page
+      div.clear
