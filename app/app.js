@@ -9,6 +9,7 @@ var express = require('express')
   , statistics = require('./routes/statistics')
   , map = require('./routes/map')
   , plateform = require('./routes/plateform')
+  , stream = require('./routes/stream')
   , http = require('http')
   , path = require('path');
 
@@ -36,6 +37,7 @@ app.get('/settings', settings.index);
 app.get('/statistics', statistics.index);
 app.get('/map', map.index);
 app.get('/plateform', plateform.index);
+app.get('/stream', stream.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
