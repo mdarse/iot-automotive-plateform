@@ -6,7 +6,7 @@ var Vehicle = require('../../lib/vehicle');
  */
 
 exports.index = function(req, res, next) {
-  var id = 'plop';
+  var id = '010203040506070809aaaaaaaaaaaaff';
   var vehicle = Vehicle.find(id);
 
   var batteryStatus, temperature, windowsStatus, lockingStatus, heatingStatus;
