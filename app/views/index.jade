@@ -3,10 +3,6 @@ extends layout
 block retour
 
 block content
- form#foo
-    label(for="bar") A bar
-    input#bar(name="bar", type="text", value="")
-    input(type="submit", value="Send")
 
   .option.option1
     .batterie
@@ -26,8 +22,8 @@ block content
   form.actions
     .option.option2
       h3 Portes
-      button.close(type='button', id='door-close', value='door-close', name='door') Verrouiller
-      button.open(type='button', id='door-open', value='door-open', name='door') Déverrouiller
+      button.close(type='button', id='door-close', value='lock', name='locking') Verrouiller
+      button.open(type='button', id='door-open', value='unlock', name='locking') Déverrouiller
 
     .option.option3
       h3 Vitres
