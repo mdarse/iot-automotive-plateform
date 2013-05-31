@@ -103,6 +103,10 @@ footer .top { float: right; }
 }
 .option5 button:hover { background-color: #222; }
 
+form.actions input[type='submit'] {
+	display: none;
+}
+
 .menu { border-top: 2px solid #ccc; }
 .menu ul {
 	list-style: none;

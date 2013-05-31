@@ -39,6 +39,8 @@ app.get('/map', map.index);
 app.get('/plateform', plateform.index);
 app.get('/stream', stream.index);
 
+app.post('/', routes.ajax);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

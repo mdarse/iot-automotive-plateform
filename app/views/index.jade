@@ -3,6 +3,11 @@ extends layout
 block retour
 
 block content
+ form#foo
+    label(for="bar") A bar
+    input#bar(name="bar", type="text", value="")
+    input(type="submit", value="Send")
+
   .option.option1
     .batterie
       img(src='../img/battery.png', alt='Niveau de batterie')
@@ -18,24 +23,27 @@ block content
         span.temp #{temperature.external}°C 
         span Extérieur
 
-  .option.option2
-    h3 Portes
-    button.close(type='button', id='door-close') Verrouiller
-    button.open(type='button', id='door-open') Déverrouiller
+  form.actions
+    .option.option2
+      h3 Portes
+      button.close(type='button', id='door-close', value='door-close', name='door') Verrouiller
+      button.open(type='button', id='door-open', value='door-open', name='door') Déverrouiller
 
-  .option.option3
-    h3 Vitres
-    button.ouvert(type='button', id='pane-open') Ouvrir
-    button.ferme(type='button', id='pane-close') Fermer
-    button.entrouvert(type='button', id='pane-half') Entrouvrir
+    .option.option3
+      h3 Vitres
+      button.ouvert(type='button', id='pane-open') Ouvrir
+      button.ferme(type='button', id='pane-close') Fermer
+      button.entrouvert(type='button', id='pane-half') Entrouvrir
 
-  .option.option4
-    h3 Chauffage
-    button.hot(type='button', id='heat-on') On
-    button.cold(type='button', id='heat-off') Off
+    .option.option4
+      h3 Chauffage
+      button.hot(type='button', id='heat-on') On
+      button.cold(type='button', id='heat-off') Off
 
-  .option.option5
-    button(type='button', id='where') Where is my car ?
+    .option.option5
+      button(type='button', id='where') Where is my car ?
+
+    input(type='submit', value='ok')
 
   .menu
     ul

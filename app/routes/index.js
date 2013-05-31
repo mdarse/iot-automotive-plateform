@@ -56,3 +56,10 @@ exports.index = function(req, res, next) {
   });
 
 };
+
+
+exports.ajax = function(req, res, next) {
+  res.send();
+  var data = req.body.door;
+  console.log(data);
+};
