@@ -3,21 +3,25 @@ extends layout
 block content
   .option.option1
     h3 Alertes
-    p M'alerter lorsque le niveau de la batterie atteint 100% :
+    p M'alerter lorsque le niveau de la batterie atteint 100%
     .alert-mob
-      div Application mobile 
-        button.sms-y.selection(type='button', id='heat-on') On
-        button.sms-n(type='button', id='heat-off') Off
+      div
+        span Application mobile 
+        button.mob(type='button', id='mob-on') On
+        button.mob(type='button', id='mob-off') Off
     .alert-sms
-      div Sms 
-        button.sms-y.selection(type='button', id='heat-on') On
-        button.sms-n(type='button', id='heat-off') Off
+      div 
+        span Sms 
+        button.sms(type='button', id='sms-on') On
+        button.sms(type='button', id='sms-off') Off
     .phone
-      label Numéro de téléphone 
-        input(type='tel', name='phone', id='phone-number', value='0606060606', disabled) 
-        button(type='button', id='phone-modif')
-          img(src='/img/edit.png', alt='Modifier')
+      label
+        span Numéro de téléphone 
+        input(type='tel', name='phone', id='phone-number')
+    button.save(type='button', id='alertes') Enregistrer
 
   .option.option2
     h3 Température du préchauffage
     input(type='range', name='prechauff', max='30', min='0', value='20', step='1')
+
+script(src='/js/settings.js', type='text/javascript')

@@ -22,13 +22,14 @@ header {
 	text-align: center;
 }
 h1 {
-	font-family: "Bree serif", serif;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 	font-size: 2.2em;
 	font-weight: normal;
 	margin: 0;
 	-webkit-text-shadow: 1px 1px 1px #000;
 	   -moz-text-shadow: 1px 1px 1px #000;
 			text-shadow: 1px 1px 1px #000;
+	text-transform: uppercase;
 }
 .content {
 	background-color: #fff;
@@ -49,7 +50,7 @@ footer .top { float: right; }
 /*Home*/
 .option { border-top: 2px solid #ccc; clear: both; padding: 10px 0; }
 .option button { background-color: #ddd; color: #999; font-size: 1.2em; }
-.option .selection { background-color: #333; }
+.option .selectione { background-color: #333; }
 
 .option1 { border: none; }
 .batterie { float: left; text-align: center; width: 60%; }
@@ -78,8 +79,8 @@ footer .top { float: right; }
 	width: 33.33%;
 }
 .option3 button:hover { background-color: #666; }
-.option3 .ouvert { background-image: url("../img/pane-open.png"); }
-.option3 .ferme { background-image: url("../img/pane-close.png"); }
+.option3 .ouvert { background-image: url("../img/pane2.png"); }
+.option3 .ferme { background-image: url("../img/pane-close2.png"); }
 .option3 .entrouvert { background-image: url("../img/pane-half.png"); }
 
 .option4 button {
@@ -92,8 +93,8 @@ footer .top { float: right; }
 	width: 50%;
 }
 .option4 button:hover { background-color: #666; }
-.option4 .hot { background-image: url("../img/hot.png"); }
-.option4 .cold { background-image: url("../img/cold.png"); }
+.option4 .hot { background-image: url("../img/hot2.png"); }
+.option4 .cold { background-image: url("../img/cold2.png"); }
 
 .option5 button { 
 	background: #333 url("../img/where.png") 10px center no-repeat;
@@ -123,7 +124,7 @@ form.actions input[type='submit'] {
 }
 .menu ul li:hover { background-color: #222; }
 .menu .item1 { 
-	background: #333 url("../img/map.png") 10px center no-repeat;
+	background: #333 url("../img/map2.png") 10px center no-repeat;
 }
 .menu .item2 { 
 	background: #333 url("../img/stats.png") 10px center no-repeat;
@@ -143,8 +144,10 @@ form.actions input[type='submit'] {
 }
 
 /*Réglages*/
-#phone-modif { background-color: transparent; border: none; }
-button img { vertical-align: bottom; }
+.option1 div { margin-bottom: 8px; }
+.option1 div span { display: inline-block; width: 50%; }
+.option1 div button { border: none; padding: 5px; width: 50px; }
+#alertes { background-color: #ddd; border: none; float: right; margin-bottom: 5px; padding: 5px; }
 input[type="range"] { margin-left: 1em; position: relative; }
 input[type="range"]:after,
 input[type="range"]:before { color: #aaa; position: absolute; top: 1em; }
@@ -188,17 +191,19 @@ input[type="range"]:after { content: attr(max); right: 0; }
 		   -moz-border-radius: 5px 5px 0 0;
 				border-radius: 5px 5px 0 0;
 	}
+	.content { padding: 20px; }
 	footer {
 		-webkit-border-radius: 0 0 5px 5px;
 		   -moz-border-radius: 0 0 5px 5px;
 				border-radius: 0 0 5px 5px;
 	}
-	.content { padding: 20px; }
-
-	.menu ul li { width: 93%; }
-
 	.retour {
 		display: block;
 		margin: -15px 0 15px;
 	}
+
+	.menu ul li { width: 93%; }
+
+	.option1 div span { display: inline-block; width: 30%; }
+
 }
