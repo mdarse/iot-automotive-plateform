@@ -140,6 +140,7 @@ footer .top { float: right; }
 
 /*Réglages*/
 #phone-modif { background-color: transparent; border: none; }
+button img { vertical-align: bottom; }
 input[type="range"] { margin-left: 1em; position: relative; }
 input[type="range"]:after,
 input[type="range"]:before { color: #aaa; position: absolute; top: 1em; }

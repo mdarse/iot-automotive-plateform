@@ -32,7 +32,7 @@ if (!!window.EventSource) {
       // Connection was closed.
     }
   }, false);
-    
+ 
 } else {
   // Result to xhr polling :(
 }
