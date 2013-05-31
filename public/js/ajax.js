@@ -9,8 +9,8 @@ $("form.actions button").on('click',function(event){
 
     var $button = $(this);
 
-    // save button info : name=value
-    var data = encodeURI($button.attr('name')) + '=' + encodeURI($button.attr('value'));
+    // save button value
+    var data = 'action=' + encodeURI($button.attr('value'));
     console.log(data);
 
     var request = $.ajax({

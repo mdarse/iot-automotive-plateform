@@ -57,9 +57,26 @@ exports.index = function(req, res, next) {
 
 };
 
-
 exports.ajax = function(req, res, next) {
-  res.send();
-  var data = req.body.door;
+  var id = '010203040506070809aaaaaaaaaaaaff';
+  var vehicle = Vehicle.find(id);
+  
+  if (!req.body.action) {
+    res.send(400);
+  }
+
+  var data = req.body.action;
   console.log(data);
+  
+  var method = ['lock', 'unlock'];
+
+  if (method.indexOf(data) == -1) {
+    res.send(400);
+  }
+  
+  vehicle[data](function(err, data){
+    if (err) return next(err);
+  });
+
+  res.send();
 };
